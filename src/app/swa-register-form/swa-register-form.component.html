@@ -1,0 +1,18 @@
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+<div>
+    <label>name:
+      <input name = "firstName" [(ngModel)]="contact.firstName" placeholder="Vorname">
+    </label>
+  </div>
+  <div>
+    <label>name:
+      <input name = "lastName" [(ngModel)]="contact.lastName" placeholder="Nachname">
+    </label>
+  </div>
+  <div>
+    <label>name:
+      <input name = "postalCode"[(ngModel)]="contact.postalCode" placeholder="PLZ">
+    </label>
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+</form>

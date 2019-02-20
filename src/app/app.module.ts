@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
 import { SwaHeaderComponent } from './swa-header/swa-header.component';
@@ -14,7 +15,8 @@ import { SwaRegisterFormComponent } from './swa-register-form/swa-register-form.
     SwaRegisterFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

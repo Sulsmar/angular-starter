@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-//import { swa-register-form } from './swa-register-form';
 
 @Component({
   selector: 'swa-register-page',
