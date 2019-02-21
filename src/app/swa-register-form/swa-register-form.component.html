@@ -176,4 +176,36 @@
     mat-raised-button>
     Submit
 </button>
+
+<!-- next Page -->
+<!-- muss noch implementiert werden, nachdem die Prüfung des Formulares positiv war, wird auf einen neue Seite weitergeleitet -->
+<!-- es muss noch die Prüfung der maximalen teilnehmer eingebaut werden, laut Aufgabe mit Mock JSON -->
+<div>
+    <mat-form-field>
+      <input [(ngModel)]="contact.howMany"
+      name="howMany"
+        #howMany="ngModel"
+        required
+        minlength="1"
+        type="number"
+        matInput
+        placeholder="Anzahl der Teilnehmer">
+      <mat-error *ngIf="howMany.hasError('required')">
+        erforderliche Angabe
+      </mat-error>
+      <mat-error *ngIf="howMany.hasError('minlength')">
+        Mindestlänge: 1 Zeichen
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+      <mat-form-field>
+        <input [(ngModel)]="contact.remarks"
+        name="remarks"
+          #remarks="ngModel"
+          matInput
+          placeholder="Anmerk./Sonstiges">
+      </mat-form-field>
+    </div>
+
 </form>

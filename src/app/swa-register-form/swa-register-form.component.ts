@@ -31,5 +31,8 @@ export class EventContact {
   lastName: string;
   phoneNumber: number;
   email: string;
+  // How many and Remarks
+  howMany: number;
+  remarks: string;
   
 }
