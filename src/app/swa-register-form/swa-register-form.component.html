@@ -46,6 +46,7 @@
       required
       minlength="5"
       maxlength="5"
+      type="number"
       matInput
       placeholder="PLZ">
     <mat-error *ngIf="postalCode.hasError('required')">
@@ -93,7 +94,7 @@
     </mat-form-field>
   </div>
   
-  <h4>Kontaktdaten der Lerher(in)</h4>
+  <h4>Ansprechpartner/in bzw. Lehrer/in</h4>
 
   <!--First Name-->
   <div>
@@ -139,6 +140,7 @@
           #phoneNumber="ngModel"
           required
           minlength="8"
+          type="number"
           matInput
           placeholder="Telefonnummer">
         <mat-error *ngIf="phoneNumber.hasError('required')">
@@ -157,6 +159,7 @@
           #email="ngModel"
           required
           minlength="6"
+          type="email"
           matInput
           placeholder="Email">
         <mat-error *ngIf="lastName.hasError('required')">
