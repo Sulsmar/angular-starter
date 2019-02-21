@@ -12,11 +12,12 @@ export class SwaRegisterPageComponent implements OnInit {
     headingAge: string = 'Für die 4.-7.Jahrgangsstufe';
     description:string = 'Kurze Beschreibung, wenn geraucht. Bavaria ipsum dolor sit amet Freibia heitzdog Biawabn oamai.An anbandeln Wiesn, Resi etza Schneid dei.';
 
-  // Variablen Tag, Datum, Uhrzeit und Ort
-    dayOfEvent: string = 'Di';
-    dateOfEvent: string = '29.05.18';
+  // Variablen Tag, Datum, Uhrzeit, Ort und Plätze
+    dateOfEvent: string = 'Do, 29.05.18';
     timeOfEvent: string = 'von 13Uhr - 16Uhr';
     placeOfEvent: string = 'Wunschort (optional)';
+    freePlaces: number = 16;
+    places: string = ' / freie Plätze 20';
     
   constructor() { }
 
