@@ -45,8 +45,7 @@
       name = "postalCode"
       #postalCode="ngModel"
       required
-      minlength="5"
-      maxlength="5"
+      pattern="[0-9]{5}"
       type="number"
       matInput
       placeholder="PLZ">
@@ -54,7 +53,7 @@
       erforderliche Angabe
     </mat-error>
     <mat-error *ngIf="postalCode.hasError('minlength')">
-      Genau 5 Zeichen
+      Genau 5 Zahlen
     </mat-error>
   </mat-form-field>
   </div>
@@ -140,15 +139,14 @@
           name="phoneNumber"
           #phoneNumber="ngModel"
           required
-          minlength="8"
-          type="number"
+          pattern="[0-9]{7,12}"
           matInput
           placeholder="Telefonnummer">
         <mat-error *ngIf="phoneNumber.hasError('required')">
         erforderliche Angabe
         </mat-error>
         <mat-error *ngIf="phoneNumber.hasError('minlength')">
-         Mindestlänge: 8 Zeichen
+         Mindestlänge: 7 und maximal 12 Zahlen
         </mat-error>
       </mat-form-field>
     </div>
@@ -161,12 +159,13 @@
           required
           minlength="6"
           type="email"
+          email
           matInput
           placeholder="Email">
-        <mat-error *ngIf="lastName.hasError('required')">
+        <mat-error *ngIf="email.hasError('required')">
           erforderliche Angabe
         </mat-error>
-        <mat-error *ngIf="lastName.hasError('minlength')">
+        <mat-error *ngIf="email.hasError('minlength')">
           Mindestlänge: 6 Zeichen
         </mat-error>
       </mat-form-field>
@@ -179,8 +178,7 @@
 </button>
 
 <!-- next Page -->
-<!-- muss noch implementiert werden, nachdem die Prüfung des Formulares positiv war, wird auf einen neue Seite weitergeleitet -->
-<!-- es muss noch die Prüfung der maximalen teilnehmer eingebaut werden, laut Aufgabe mit Mock JSON-->
+
 <div>
     <mat-form-field>
       <input [(ngModel)]="contact.howMany"
