@@ -1,18 +1,109 @@
+<!--
+<form (ngSubmit)="onSubmit()"
+      #heroForm="ngForm">
+  <div>
+    <mat-form-field>
+      <input [(ngModel)]="contact.firstName"
+             name="firstName"
+             #firstName="ngModel"
+             required
+             minlength="3"
+             matInput
+             placeholder="Vorname">
+      <mat-error *ngIf="firstName.hasError('required')">
+        erforderliche Angabe
+      </mat-error>
+      <mat-error *ngIf="firstName.hasError('minlength')">
+        Mindestlänge: 4 Zeichen
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input [(ngModel)]="contact.lastName"
+             name="lastName"
+             matInput
+             placeholder="Nachname">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input [(ngModel)]="contact.postalCode"
+             name="postalCode"
+             matInput
+             placeholder="PLZ">
+    </mat-form-field>
+  </div>
+  <button type="submit"
+          [disabled]="!heroForm.form.valid"
+          mat-raised-button>
+    Submit
+  </button>
+</form>
+//////////////////////////////////////////////////// -->
 <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-<div>
-    <label>name:
-      <input name = "firstName" [(ngModel)]="contact.firstName" placeholder="Vorname">
+  <h4>Angaben zur Schule</h4>
+  <div>
+    <label>Name der Schule*
+      <input name = "nameOfSchoool" [(ngModel)]="contact.nameOfSchoool">
     </label>
   </div>
   <div>
-    <label>name:
-      <input name = "lastName" [(ngModel)]="contact.lastName" placeholder="Nachname">
+    <label>Straße und Hausnmmer*
+      <input name = "streetAndNumber" [(ngModel)]="contact.streetAndNumber">
     </label>
   </div>
   <div>
-    <label>name:
-      <input name = "postalCode"[(ngModel)]="contact.postalCode" placeholder="PLZ">
+    <label>Postleitzahl*
+      <input name = "postalCode"[(ngModel)]="contact.postalCode">
     </label>
   </div>
+  <div>
+    <label>Ort*
+      <input name = "city" [(ngModel)]="contact.city">
+    </label>
+  </div>
+  <div>
+      <label>Klasse*
+        <input name = "schoolClass" [(ngModel)]="contact.schoolClass">
+      </label>
+  </div>
+  <h4>Kontaktdaten der Lerher(in)</h4>
+  <div>
+      <mat-form-field>
+        <input [(ngModel)]="contact.firstName"
+               name="firstName"
+               #firstName="ngModel"
+               required
+               minlength="3"
+               matInput
+               placeholder="Vorname">
+        <mat-error *ngIf="firstName.hasError('required')">
+          erforderliche Angabe
+        </mat-error>
+        <mat-error *ngIf="firstName.hasError('minlength')">
+          Mindestlänge: 4 Zeichen
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <label>Nachname*
+        <input name = "lastName" [(ngModel)]="contact.lastName">
+      </label>
+    </div>
+    <div>
+      <label>Telefon*
+        <input name = "phoneNumber" [(ngModel)]="contact.phoneNumber">
+      </label>
+    </div>
+    <div>
+      <label>Email*
+        <input name = "email" [(ngModel)]="contact.email">
+      </label>
+    </div>
+
+
+
+
   <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
 </form>

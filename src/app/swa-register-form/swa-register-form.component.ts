@@ -20,7 +20,16 @@ export class SwaRegisterFormComponent implements OnInit {
 }
 
 export class EventContact {
+  //School
+  nameOfSchool: string;
+  streetAndNumber:string;
+  postalCode: number;
+  city: string;
+  schoolClass: string;
+  //Teacher
   firstName: string;
   lastName: string;
-  postalcode: number;
+  phoneNumber: string;
+  email: string;
+  
 }
