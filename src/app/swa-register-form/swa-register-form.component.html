@@ -38,6 +38,7 @@
     </mat-form-field>
   </div>
   <!--Postalcode-->
+  <!-- maxlength funktioneirt nicht! muss überarbeitet werden-->
   <div>
     <mat-form-field>
       <input [(ngModel)]="contact.postalCode"
@@ -179,7 +180,7 @@
 
 <!-- next Page -->
 <!-- muss noch implementiert werden, nachdem die Prüfung des Formulares positiv war, wird auf einen neue Seite weitergeleitet -->
-<!-- es muss noch die Prüfung der maximalen teilnehmer eingebaut werden, laut Aufgabe mit Mock JSON -->
+<!-- es muss noch die Prüfung der maximalen teilnehmer eingebaut werden, laut Aufgabe mit Mock JSON-->
 <div>
     <mat-form-field>
       <input [(ngModel)]="contact.howMany"
