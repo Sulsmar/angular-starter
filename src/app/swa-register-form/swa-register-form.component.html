@@ -1,74 +1,101 @@
-<!--
-<form (ngSubmit)="onSubmit()"
-      #heroForm="ngForm">
+
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+  <h4>Angaben zur Schule</h4>
+  <!--Name of School-->
   <div>
     <mat-form-field>
-      <input [(ngModel)]="contact.firstName"
-             name="firstName"
-             #firstName="ngModel"
-             required
-             minlength="3"
-             matInput
-             placeholder="Vorname">
-      <mat-error *ngIf="firstName.hasError('required')">
-        erforderliche Angabe
-      </mat-error>
-      <mat-error *ngIf="firstName.hasError('minlength')">
-        Mindestlänge: 4 Zeichen
-      </mat-error>
+        <input [(ngModel)]="contact.nameOfSchool"
+        name = "nameOfSchool"
+        #nameOfSchool="ngModel"
+        required
+        minlength="3"
+        matInput
+        placeholder="Name der Schule">
+    <mat-error *ngIf="nameOfSchool.hasError('required')">
+       erforderliche Angabe
+    </mat-error>
+    <mat-error *ngIf="nameOfSchool.hasError('minlength')">
+       Mindestlänge: 3 Zeichen
+    </mat-error>
     </mat-form-field>
   </div>
+  <!--Street and Number-->
   <div>
     <mat-form-field>
-      <input [(ngModel)]="contact.lastName"
-             name="lastName"
-             matInput
-             placeholder="Nachname">
+      <input [(ngModel)]="contact.streetAndNumber"
+      name = "streetAndNumber"
+      #streetAndNumber="ngModel"
+      required
+      minlength="3"
+      matInput
+      placeholder="Straße und Nr.">
+    <mat-error *ngIf="streetAndNumber.hasError('required')">
+      erforderliche Angabe
+    </mat-error>
+    <mat-error *ngIf="streetAndNumber.hasError('minlength')">
+      Mindestlänge: 3 Zeichen
+    </mat-error>
     </mat-form-field>
   </div>
+  <!--Postalcode-->
   <div>
     <mat-form-field>
       <input [(ngModel)]="contact.postalCode"
-             name="postalCode"
-             matInput
-             placeholder="PLZ">
+      name = "postalCode"
+      #postalCode="ngModel"
+      required
+      minlength="5"
+      maxlength="5"
+      matInput
+      placeholder="PLZ">
+    <mat-error *ngIf="postalCode.hasError('required')">
+      erforderliche Angabe
+    </mat-error>
+    <mat-error *ngIf="postalCode.hasError('minlength')">
+      Genau 5 Zeichen
+    </mat-error>
+  </mat-form-field>
+  </div>
+  <!--City-->
+  <div>
+    <mat-form-field>
+      <input [(ngModel)]="contact.city"
+      name = "city"
+      #city="ngModel"
+      required
+      minlength="2"
+      matInput
+      placeholder="Ort">
+    <mat-error *ngIf="city.hasError('required')">
+      erforderliche Angabe
+    </mat-error>
+    <mat-error *ngIf="city.hasError('minlength')">
+      Mindestlänge: 2 Zeichen
+    </mat-error>
+  </mat-form-field>
+  </div>
+  <!-- School Class-->
+  <div>
+    <mat-form-field>
+        <input [(ngModel)]="contact.schoolClass"
+        name = "schoolClass"
+        #schoolClass="ngModel"
+        required
+        minlength="2"
+        matInput
+        placeholder="Klasse">
+    <mat-error *ngIf="schoolClass.hasError('required')">
+        erforderliche Angabe
+      </mat-error>
+      <mat-error *ngIf="schoolClass.hasError('minlength')">
+        Mindestlänge: 2 Zeichen
+      </mat-error>
     </mat-form-field>
   </div>
-  <button type="submit"
-          [disabled]="!heroForm.form.valid"
-          mat-raised-button>
-    Submit
-  </button>
-</form>
-//////////////////////////////////////////////////// -->
-<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-  <h4>Angaben zur Schule</h4>
-  <div>
-    <label>Name der Schule*
-      <input name = "nameOfSchoool" [(ngModel)]="contact.nameOfSchoool">
-    </label>
-  </div>
-  <div>
-    <label>Straße und Hausnmmer*
-      <input name = "streetAndNumber" [(ngModel)]="contact.streetAndNumber">
-    </label>
-  </div>
-  <div>
-    <label>Postleitzahl*
-      <input name = "postalCode"[(ngModel)]="contact.postalCode">
-    </label>
-  </div>
-  <div>
-    <label>Ort*
-      <input name = "city" [(ngModel)]="contact.city">
-    </label>
-  </div>
-  <div>
-      <label>Klasse*
-        <input name = "schoolClass" [(ngModel)]="contact.schoolClass">
-      </label>
-  </div>
+  
   <h4>Kontaktdaten der Lerher(in)</h4>
+
+  <!--First Name-->
   <div>
       <mat-form-field>
         <input [(ngModel)]="contact.firstName"
@@ -86,24 +113,64 @@
         </mat-error>
       </mat-form-field>
     </div>
+    <!--Last Name-->
     <div>
-      <label>Nachname*
-        <input name = "lastName" [(ngModel)]="contact.lastName">
-      </label>
+      <mat-form-field>
+        <input [(ngModel)]="contact.lastName"
+          name="lastName"
+          #lastName="ngModel"
+          required
+          minlength="3"
+          matInput
+          placeholder="Nachname">
+        <mat-error *ngIf="lastName.hasError('required')">
+        erforderliche Angabe
+        </mat-error>
+        <mat-error *ngIf="lastName.hasError('minlength')">
+         Mindestlänge: 3 Zeichen
+        </mat-error>
+      </mat-form-field>
     </div>
+    <!--Phone Number-->
     <div>
-      <label>Telefon*
-        <input name = "phoneNumber" [(ngModel)]="contact.phoneNumber">
-      </label>
+      <mat-form-field>
+        <input [(ngModel)]="contact.phoneNumber"
+          name="phoneNumber"
+          #phoneNumber="ngModel"
+          required
+          minlength="8"
+          matInput
+          placeholder="Telefonnummer">
+        <mat-error *ngIf="phoneNumber.hasError('required')">
+        erforderliche Angabe
+        </mat-error>
+        <mat-error *ngIf="phoneNumber.hasError('minlength')">
+         Mindestlänge: 8 Zeichen
+        </mat-error>
+      </mat-form-field>
     </div>
+    <!--Mail-->
     <div>
-      <label>Email*
-        <input name = "email" [(ngModel)]="contact.email">
-      </label>
+      <mat-form-field>
+        <input [(ngModel)]="contact.email"
+        name="email"
+          #email="ngModel"
+          required
+          minlength="6"
+          matInput
+          placeholder="Email">
+        <mat-error *ngIf="lastName.hasError('required')">
+          erforderliche Angabe
+        </mat-error>
+        <mat-error *ngIf="lastName.hasError('minlength')">
+          Mindestlänge: 6 Zeichen
+        </mat-error>
+      </mat-form-field>
     </div>
-
-
-
-
-  <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+    <!--Button-->
+    <button type="submit"
+    [disabled]="!heroForm.form.valid"
+    mat-raised-button>
+    Submit
+</button>
 </form>
