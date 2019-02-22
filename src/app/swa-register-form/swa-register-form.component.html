@@ -1,7 +1,9 @@
 
 <form (ngSubmit)="onSubmit()" 
   #heroForm="ngForm">
+
   <h4>Angaben zur Schule</h4>
+  
   <!--Name of School-->
   <div>
     <mat-form-field>
@@ -177,8 +179,7 @@
     Jetzt anmelden   
 </button>
 
-<!-- next Page -->
-<!-- muss noch implementiert werden, nachdem die Prüfung des Formulares positiv war, wird auf einen neue Seite weitergeleitet -->
+<!-- TODO:  Felder deaktivieren, nachdem die Prüfung des Formulares positiv war, werden die Felder aktiv  bzw. Formular wird komplett in neuer Seite aufgebaut-->
  <div>
     <mat-form-field>
       <input [(ngModel)]="contact.howMany"
