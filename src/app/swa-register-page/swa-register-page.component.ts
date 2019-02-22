@@ -17,7 +17,6 @@ export class SwaRegisterPageComponent implements OnInit {
     timeOfEvent: string = 'von 13Uhr - 16Uhr';
     placeOfEvent: string = 'Wunschort (optional)';
     freePlaces: number = 16;
-    places: string = ' / freie Plätze 20';
     
   constructor() { }
 

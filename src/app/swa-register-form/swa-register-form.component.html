@@ -1,15 +1,16 @@
 
-<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+<form (ngSubmit)="onSubmit()" 
+  #heroForm="ngForm">
   <h4>Angaben zur Schule</h4>
   <!--Name of School-->
   <div>
     <mat-form-field>
         <input [(ngModel)]="contact.nameOfSchool"
-        name = "nameOfSchool"
-        #nameOfSchool="ngModel"
-        required
-        minlength="3"
-        matInput
+               name = "nameOfSchool"
+               #nameOfSchool="ngModel"
+               required
+               minlength="3"
+               matInput
         placeholder="Name der Schule">
     <mat-error *ngIf="nameOfSchool.hasError('required')">
        erforderliche Angabe
@@ -23,12 +24,12 @@
   <div>
     <mat-form-field>
       <input [(ngModel)]="contact.streetAndNumber"
-      name = "streetAndNumber"
-      #streetAndNumber="ngModel"
-      required
-      minlength="3"
-      matInput
-      placeholder="Straße und Nr.">
+             name = "streetAndNumber"
+             #streetAndNumber="ngModel"
+             required
+             minlength="3"
+             matInput
+             placeholder="Straße und Nr.">
     <mat-error *ngIf="streetAndNumber.hasError('required')">
       erforderliche Angabe
     </mat-error>
@@ -38,23 +39,21 @@
     </mat-form-field>
   </div>
   <!--Postalcode-->
-  <!-- maxlength funktioneirt nicht! muss überarbeitet werden-->
   <div>
     <mat-form-field>
       <input [(ngModel)]="contact.postalCode"
-      name = "postalCode"
-      #postalCode="ngModel"
-      required
-      minlength="5"
-      maxlength="5"
-      type="number"
-      matInput
-      placeholder="PLZ">
+             name = "postalCode"
+             #postalCode="ngModel"
+             required
+             pattern="[0-9]{5}"
+             type="number"
+             matInput
+             placeholder="PLZ">
     <mat-error *ngIf="postalCode.hasError('required')">
       erforderliche Angabe
     </mat-error>
-    <mat-error *ngIf="postalCode.hasError('minlength')">
-      Genau 5 Zeichen
+    <mat-error *ngIf="postalCode.hasError('pattern')">
+      Genau 5 Zahlen
     </mat-error>
   </mat-form-field>
   </div>
@@ -62,12 +61,12 @@
   <div>
     <mat-form-field>
       <input [(ngModel)]="contact.city"
-      name = "city"
-      #city="ngModel"
-      required
-      minlength="2"
-      matInput
-      placeholder="Ort">
+             name = "city"
+             #city="ngModel"
+             required
+             minlength="2"
+             matInput
+             placeholder="Ort">
     <mat-error *ngIf="city.hasError('required')">
       erforderliche Angabe
     </mat-error>
@@ -80,12 +79,12 @@
   <div>
     <mat-form-field>
         <input [(ngModel)]="contact.schoolClass"
-        name = "schoolClass"
-        #schoolClass="ngModel"
-        required
-        minlength="2"
-        matInput
-        placeholder="Klasse">
+               name = "schoolClass"
+               #schoolClass="ngModel"
+               required
+               minlength="2"
+              matInput
+              placeholder="Klasse">
     <mat-error *ngIf="schoolClass.hasError('required')">
         erforderliche Angabe
       </mat-error>
@@ -119,12 +118,12 @@
     <div>
       <mat-form-field>
         <input [(ngModel)]="contact.lastName"
-          name="lastName"
-          #lastName="ngModel"
-          required
-          minlength="3"
-          matInput
-          placeholder="Nachname">
+               name="lastName"
+               #lastName="ngModel"
+               required
+               minlength="3"
+               matInput
+               placeholder="Nachname">
         <mat-error *ngIf="lastName.hasError('required')">
         erforderliche Angabe
         </mat-error>
@@ -137,40 +136,40 @@
     <div>
       <mat-form-field>
         <input [(ngModel)]="contact.phoneNumber"
-          name="phoneNumber"
-          #phoneNumber="ngModel"
-          required
-          minlength="8"
-          type="number"
-          matInput
-          placeholder="Telefonnummer">
-        <mat-error *ngIf="phoneNumber.hasError('required')">
+                name="phoneNumber"
+                #phoneNumber="ngModel"
+                required
+                pattern="[0-9]{7,12}"
+                matInput
+                placeholder="Telefonnummer">
+      <mat-error *ngIf="phoneNumber.hasError('required')">
         erforderliche Angabe
         </mat-error>
-        <mat-error *ngIf="phoneNumber.hasError('minlength')">
-         Mindestlänge: 8 Zeichen
+        <mat-error *ngIf="phoneNumber.hasError('pattern')">
+         Mindestens 7 Zahlen und maximal 12 Zahlen
         </mat-error>
       </mat-form-field>
     </div>
     <!--Mail-->
     <div>
-      <mat-form-field>
-        <input [(ngModel)]="contact.email"
-        name="email"
-          #email="ngModel"
-          required
-          minlength="6"
-          type="email"
-          matInput
-          placeholder="Email">
-        <mat-error *ngIf="lastName.hasError('required')">
-          erforderliche Angabe
-        </mat-error>
-        <mat-error *ngIf="lastName.hasError('minlength')">
-          Mindestlänge: 6 Zeichen
-        </mat-error>
-      </mat-form-field>
-    </div>
+        <mat-form-field>
+          <input [(ngModel)]="contact.email"
+                 name="email"
+                 #email="ngModel"
+                 required
+                 minlength="6"
+                 type="email"
+                 matInput
+                 email
+                 placeholder="Email">
+          <mat-error *ngIf="email.hasError('required')">
+            erforderliche Angabe
+          </mat-error>
+          <mat-error *ngIf="email.hasError('email')">
+            Keine gültige Email-Adresse
+          </mat-error>
+        </mat-form-field>
+      </div>
     <!--Button-->
     <button type="submit"
     [disabled]="!heroForm.form.valid"
@@ -180,18 +179,17 @@
 
 <!-- next Page -->
 <!-- muss noch implementiert werden, nachdem die Prüfung des Formulares positiv war, wird auf einen neue Seite weitergeleitet -->
-<!-- es muss noch die Prüfung der maximalen teilnehmer eingebaut werden, laut Aufgabe mit Mock JSON-->
 <div>
     <mat-form-field>
       <input [(ngModel)]="contact.howMany"
-      name="howMany"
-        #howMany="ngModel"
-        required
-        minlength="1"
-        type="number"
-        matInput
-        placeholder="Anzahl der Teilnehmer">
-      <mat-error *ngIf="howMany.hasError('required')">
+              name="howMany"
+              #howMany="ngModel"
+              required
+              minlength="1"
+              type="number"
+              matInput
+              placeholder="Anzahl Teilnehmer (max {{available}})">
+    <mat-error *ngIf="howMany.hasError('required')">
         erforderliche Angabe
       </mat-error>
       <mat-error *ngIf="howMany.hasError('minlength')">
@@ -202,10 +200,10 @@
   <div>
       <mat-form-field>
         <input [(ngModel)]="contact.remarks"
-        name="remarks"
-          #remarks="ngModel"
-          matInput
-          placeholder="Anmerk./Sonstiges">
+               name="remarks"
+               #remarks="ngModel"
+               matInput
+               placeholder="Anmerk./Sonstiges">
       </mat-form-field>
     </div>
 

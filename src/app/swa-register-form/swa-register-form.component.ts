@@ -10,6 +10,8 @@ export class SwaRegisterFormComponent implements OnInit {
 
   contact: EventContact = new EventContact();
 
+  available: number = this.fetchAvailableFromServer()["available"];
+
   constructor() { }
 
   ngOnInit() {
@@ -17,12 +19,16 @@ export class SwaRegisterFormComponent implements OnInit {
   onSubmit(){
     console.log(this.contact);
   }
+
+  fetchAvailableFromServer() {
+    return { "available": 6 };
+  }
 }
 
 export class EventContact {
   //School
   nameOfSchool: string;
-  streetAndNumber:string;
+  streetAndNumber: string;
   postalCode: number;
   city: string;
   schoolClass: string;
