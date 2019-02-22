@@ -110,7 +110,7 @@
           erforderliche Angabe
         </mat-error>
         <mat-error *ngIf="firstName.hasError('minlength')">
-          Mindestlänge: 4 Zeichen
+          Mindestlänge: 3 Zeichen
         </mat-error>
       </mat-form-field>
     </div>
@@ -179,7 +179,7 @@
 
 <!-- next Page -->
 <!-- muss noch implementiert werden, nachdem die Prüfung des Formulares positiv war, wird auf einen neue Seite weitergeleitet -->
-<div>
+ <div>
     <mat-form-field>
       <input [(ngModel)]="contact.howMany"
               name="howMany"
@@ -193,7 +193,7 @@
         erforderliche Angabe
       </mat-error>
       <mat-error *ngIf="howMany.hasError('minlength')">
-        Mindestlänge: 1 Zeichen
+        Mindestteilnehmerzahl: 1
       </mat-error>
     </mat-form-field>
   </div>
